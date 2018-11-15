@@ -18,7 +18,7 @@ class App extends React.Component {
 		let char2 = await axios.get(url+'2');
 		let char3 = await axios.get(url+'3');
 
-		this.setState({characterList: [char1, char2, char3]});
+		this.setState({characterList: [char1.data, char2.data, char3.data]});
 	}
 
 	render() {
