@@ -1,6 +1,7 @@
 import React from 'react';
 import CharacterList from './CharacterList';
 import axios from 'axios';
+import '../styles/global.css';
 
 class App extends React.Component {
 
