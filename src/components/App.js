@@ -2,14 +2,20 @@ import React from 'react';
 import CharacterList from './CharacterList';
 import axios from 'axios';
 import '../styles/global.css';
+import CharacterDetails from './CharacterDetails';
 
 class App extends React.Component {
 
 	constructor() {
 		super();
 		this.state = {
-			characterList: []
+			characterList: [],
+			selectedCharacter: {}
 		}
+	}
+
+	updateSelectedCharacter(character) {
+		this.setState({selectedCharacter: character});
 	}
 
 	async componentDidMount() {
@@ -23,7 +29,12 @@ class App extends React.Component {
 	}
 
 	render() {
-		return <CharacterList list={this.state.characterList} />
+		return (
+			<div>
+				<CharacterList list={this.state.characterList} />
+				<CharacterDetails data={this.state.selectedCharacter}/>
+			</div>
+		)
 	}
 }
 
