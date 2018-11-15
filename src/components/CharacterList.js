@@ -6,8 +6,11 @@ class CharacterList extends React.Component {
 	render() {
 		return (
 			<div id="character-list">
-				{this.props.list.map(function(el, index) {
-					return <Character data={el} />
+				{this.props.list.map((el) => {
+					return (<Character 
+						data={el} 
+						updateSelectedCharacter={this.props.updateSelectedCharacter}
+					/>)
 				})}
 			</div>
 		)

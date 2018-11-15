@@ -12,6 +12,7 @@ class App extends React.Component {
 			characterList: [],
 			selectedCharacter: {}
 		}
+		this.updateSelectedCharacter = this.updateSelectedCharacter.bind(this);
 	}
 
 	updateSelectedCharacter(character) {
@@ -31,7 +32,7 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
-				<CharacterList list={this.state.characterList} />
+				<CharacterList list={this.state.characterList} updateSelectedCharacter={this.updateSelectedCharacter}/>
 				<CharacterDetails data={this.state.selectedCharacter}/>
 			</div>
 		)
